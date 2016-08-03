@@ -6,7 +6,7 @@ export type KoaRequest = {
     headers: Object;
     method: string;
     /** Return request Content-Length as a number when present, or undefined. */
-    length: number|undefined;
+    length: ?number;
     url: string;
     originalUrl: string;
     /** origin of URL, include protocol and host. */
@@ -26,7 +26,7 @@ export type KoaRequest = {
     /** Get request Content-Type void of parameters such as "charset". */
     type: string;
     /** Get request charset when present, or undefined */
-    charset: string|undefined;
+    charset: ?string;
     /** Get parsed query-string, returning an empty object when no query-string is present. Note that this getter does not support nested parsing. */
     query: Object;
     /** Check if a request cache is "fresh", aka the contents have not changed. This method is for cache negotiation between If-None-Match / ETag, and If-Modified-Since and Last-Modified. It should be referenced after setting one or more of these response headers. */

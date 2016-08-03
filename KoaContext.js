@@ -17,8 +17,8 @@ export type KoaContext = {
 
     cookies: KoaCookies;
 
-    throw(msg?: string, status?: number, properties?: Object);
-    assert(value: any, msg?: string, status?: number, properties?: Object);
+    throw(msg?: string, status?: number, properties?: Object):void;
+    assert(value: any, msg?: string, status?: number, properties?: Object):void;
 
 
     /* Request aliases */
@@ -81,28 +81,28 @@ export type KoaContext = {
 
 
     /** response body */
-    body: string|Buffer|Stream|Object|null;
+    body: string|Buffer|Object|null;
     /** Response status. By default, response.status is not set unlike node's res.statusCode which defaults to 200. */
-    status: number|undefined;
+    status: ?number;
     /** response status message. By default, response.message is associated with response.status. */
-    message: string|undefined;
+    message: ?string;
     /** response Content-Length as a number when present, or deduce from this.body when possible, or undefined */
-    length: number|undefined;
+    length: ?number;
     /** Set response header field to value */
-    set(field: string, value: string);
+    set(field: string, value: string):void;
     /** Append additional header field with value val. */
-    append(field: string, value: string);
+    append(field: string, value: string):void;
     /** Remove header field. */
-    remove(field: string);
+    remove(field: string):void;
     /** response Content-Type void of parameters such as "charset". */
     type: string;
     /**
      * Perform a [302] redirect to url.
      * The string "back" is special-cased to provide Referrer support, when Referrer is not present alt or "/" is used.
      */
-    redirect(url: string, alt?: string);
+    redirect(url: string, alt?: string):void;
     /** Set Content-Disposition to "attachment" to signal the client to prompt for download. Optionally specify the filename of the download. */
-    attachment(filename?: string);
+    attachment(filename?: string):void;
     /** Check if a response header has already been sent. Useful for seeing if the client may be notified on error. */
     headerSent: boolean;
     /** Last-Modified header as an appropriate UTC string. You can either set it as a Date or date string. */

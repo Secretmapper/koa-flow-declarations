@@ -20,6 +20,6 @@ type KoaCookiesSetOptions = {
 };
 
 export type KoaCookies = {
-    get(name: string, options?: KoaCookiesGetOptions);
-    set(name: string, value: string, options?: KoaCookiesSetOptions);
+    get(name: string, options?: KoaCookiesGetOptions):string;
+    set(name: string, value: ?string, options?: KoaCookiesSetOptions):void;
 }
