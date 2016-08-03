@@ -1,3 +1,4 @@
+// @flow
 import type { KoaRequest } from './KoaRequest';
 import type { KoaResponse } from './KoaResponse';
 import type { KoaCookies } from './KoaCookies';

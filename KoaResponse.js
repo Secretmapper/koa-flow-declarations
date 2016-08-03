@@ -1,3 +1,4 @@
+// @flow
 /* global Buffer, Stream */
 
 export type KoaResponse = {

@@ -1,3 +1,4 @@
+// @flow
 export type KoaRequest = {
     /** Request header object */
     header: Object;

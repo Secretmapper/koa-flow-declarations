@@ -1,3 +1,4 @@
+// @flow
 type KoaCookiesGetOptions = {
     /** the cookie requested should be signed */
     signed?: boolean;
